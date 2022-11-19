@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/a772cbaaee.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+			*{
+				margin: 0%;
+			}
+		body{
+			background: skyblue;
+			text-align: center;
+			background-image: url("https://media.tenor.com/dl7di6zCMRQAAAAC/thug-life-make-it-rain.gif");
+			background-repeat: no-repeat;
+			background-size: 6%;
+			background-position: 70% 60%;
+
+		}
+		.Todo{
+			border:2px solid rgba(0, 0, 0, 0.5);
+			margin: 5% 35% 3% 40% ;
+			background-color: white;
+			border-radius: 8px;
+		}
+		#user{
+			text-align: center;
+			border-radius: 1rem;
+			margin-top:5% ;
+			font-family: serif;
+			width: 60%;
+			font-size:1rem ;
+			padding: 0.5% 0%;
+			margin-bottom: 7%;
+
+		}
+		.add{
+			margin-top: 1%;
+			margin-bottom:5% ;
+			font-family: serif;		
+			width: 40%;
+			font-size: 1rem;
+
+		}
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 1rem;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function save(){
+			let username=document.getElementById("user").value
+			console.log(username)
+			document.getElementById("user").value=""
+			document.getElementById("newTodo")
+			if(username===""){
+					alert("Enter amessage")
+			}
+			else{
+			   addTodo(username)
+		    }
+		}
+		function addTodo(newValue) {
+			let ul=document.querySelector("ul")
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitems">${newValue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>
+			`
+			li.classList.add("list-type")
+			ul.appendChild(li)
+		}
+	</script>
+</head>
+<body>
+	<div class="Todo">
+		<input id="user" value="" placeholder="Enter a message" />
+	<ul>
+		
+	</ul>
+	<button class="add" onclick="save()">Submit</button>
+	</div>
+	
+</body>
+</html>
